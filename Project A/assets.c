@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char assetID[100][20];
+int assetID[100];
 char assetName[100][50];
 char assetType[100][30];
 float purchaseValue[100];
@@ -10,26 +10,26 @@ char assetCondition[100][30];
 
 int assetCount = 0;
 
-int addAsset()
-{
+void addAsset(){
+
     if (assetCount >= 100)
     {
-        printf("\nAsset limit reached. Cannot add more assets.\n");
-        return 0;
+        printf("\nMaximum limit reached. Cannot add more assets.\n");
+        return;
     }
 
     printf("\n========== ADD ASSET ==========\n");
 
     printf("Enter Asset ID: ");
-    fgets(assetID[assetCount], 20, stdin);
-    assetID[assetCount][strcspn(assetID[assetCount], "\n")] = '\0';
+    scanf("%d", &assetID[assetCount]);
+    while (getchar() != '\n');
 
     printf("Enter Asset Name: ");
-    fgets(assetName[assetCount], 50, stdin);
+    fgets(assetName[assetCount], sizeof(assetName[assetCount]), stdin);
     assetName[assetCount][strcspn(assetName[assetCount], "\n")] = '\0';
 
     printf("Enter Asset Type: ");
-    fgets(assetType[assetCount], 30, stdin);
+    fgets(assetType[assetCount], sizeof(assetType[assetCount]), stdin);
     assetType[assetCount][strcspn(assetType[assetCount], "\n")] = '\0';
 
     printf("Enter Purchase Value: ");
@@ -37,11 +37,11 @@ int addAsset()
     while (getchar() != '\n');
 
     printf("Enter Department: ");
-    fgets(department[assetCount], 50, stdin);
+    fgets(department[assetCount], sizeof(department[assetCount]), stdin);
     department[assetCount][strcspn(department[assetCount], "\n")] = '\0';
 
     printf("Enter Condition: ");
-    fgets(assetCondition[assetCount], 30, stdin);
+    fgets(assetCondition[assetCount], sizeof(assetCondition[assetCount]), stdin);
     assetCondition[assetCount][strcspn(assetCondition[assetCount], "\n")] = '\0';
 
     assetCount++;
@@ -49,8 +49,8 @@ int addAsset()
     printf("\nAsset added successfully!\n");
 }
 
-void displayAssets()
-{
+void displayAssets(){
+
     if (assetCount == 0)
     {
         printf("\nNo assets have been registered.\n");
@@ -64,7 +64,7 @@ void displayAssets()
         printf("\nAsset %d\n", i + 1);
         printf("-----------------------------\n");
 
-        printf("Asset ID: %s\n", assetID[i]);
+        printf("Asset ID: %d\n", assetID[i]);
         printf("Asset Name: %s\n", assetName[i]);
         printf("Asset Type: %s\n", assetType[i]);
         printf("Purchase Value: N$%.2f\n", purchaseValue[i]);
@@ -73,9 +73,9 @@ void displayAssets()
     }
 }
 
-void searchAsset()
-{
-    char searchID[20];
+void searchAsset(){
+
+    int searchID;
     int found = 0;
 
     if (assetCount == 0)
@@ -87,17 +87,17 @@ void searchAsset()
     printf("\n========== SEARCH ASSET ==========\n");
 
     printf("Enter Asset ID to search: ");
-    scanf(" %19[^\n]", searchID);
+    scanf("%d", &searchID);
     while (getchar() != '\n');
 
     for (int i = 0; i < assetCount; i++)
     {
-        if (strcmp(assetID[i], searchID) == 0)
+        if (assetID[i] == searchID)
         {
             printf("\nAsset Found!\n");
             printf("-----------------------------\n");
 
-            printf("Asset ID: %s\n", assetID[i]);
+            printf("Asset ID: %d\n", assetID[i]);
             printf("Asset Name: %s\n", assetName[i]);
             printf("Asset Type: %s\n", assetType[i]);
             printf("Purchase Value: N$%.2f\n", purchaseValue[i]);
@@ -115,8 +115,8 @@ void searchAsset()
     }
 }
 
-void assetMenu()
-{
+void assetMenu(){
+
     int choice;
 
     do
@@ -159,8 +159,8 @@ void assetMenu()
     } while (choice != 4);
 }
 
-int main(void)
-{
+int main(void){
+
     assetMenu();
 
     return 0;
