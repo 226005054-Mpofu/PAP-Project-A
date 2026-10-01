@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
+#ifndef assets_h
+#define assets_h
+
 int assetID[100];
 char assetName[100][50];
 char assetType[100][30];
@@ -159,7 +162,7 @@ void assetMenu(){
     } while (choice != 4);
 }
 
-int main(void){
+void assetMenu(void){
 
     assetMenu();
 
