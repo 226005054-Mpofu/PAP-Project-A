@@ -4,12 +4,12 @@
 #ifndef assets_h
 #define assets_h
 
-int assetID[100];
-char assetName[100][50];
-char assetType[100][30];
-float purchaseValue[100];
-char department[100][50];
-char assetCondition[100][30];
+extern int assetID[100];
+extern char assetName[100][50];
+extern char assetType[100][30];
+extern float purchaseValue[100];
+extern char department[100][50];
+extern char assetCondition[100][30];
 
 int assetCount = 0;
 
