@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-int assetID[100];
-char assetName[100][50];
-char assetType[100][30];
-float purchaseValue[100];
-char department[100][50];
-char assetCondition[100][30];
+#ifndef assets_h
+#define assets_h
+
+extern int assetID[100];
+extern char assetName[100][50];
+extern char assetType[100][30];
+extern float purchaseValue[100];
+extern char department[100][50];
+extern char assetCondition[100][30];
 
 int assetCount = 0;
 
@@ -159,7 +162,7 @@ void assetMenu(){
     } while (choice != 4);
 }
 
-int main(void){
+void assetMenu(void){
 
     assetMenu();
 
