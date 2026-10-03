@@ -25,7 +25,6 @@ static void printTitle(const char *title)
     printf("%s\n", title);
     printLine('=', 60);
 }
-
 static int readChoice(void)
 {
     char buffer[32];
@@ -33,7 +32,7 @@ static int readChoice(void)
 
     if (fgets(buffer, sizeof(buffer), stdin) == NULL)
     {
-        return -1;
+        return 5;   /* input closed (e.g. Ctrl+Z): leave the menu instead of looping forever */
     }
     if (sscanf(buffer, "%d", &choice) != 1)
     {
@@ -42,11 +41,11 @@ static int readChoice(void)
     return choice;
 }
 
+/* Gross salary = basic + housing allowance + transport allowance */
 static float calculateGross(const Employee *emp)
 {
     return emp->basic_salary + emp->housing_allowance + emp->transport_allowance;
 }
-
 
 void employeeReport(void)
 {
@@ -88,7 +87,6 @@ void employeeReport(void)
     printf("Highest Salary  : N$%.2f (%s)\n", highest, employees[highestIndex].name);
     printf("Lowest Salary   : N$%.2f (%s)\n", lowest, employees[lowestIndex].name);
 }
-
 
 void budgetReport(void)
 {
@@ -145,7 +143,6 @@ void budgetReport(void)
         }
     }
 }
-
 
 void supplierReport(void)
 {
@@ -225,7 +222,6 @@ void assetReport(void)
     printf("Total Asset Value : N$%.2f\n", totalValue);
     printf("Condition summary : Good = %d, Fair = %d, Poor = %d\n", good, fair, poor);
 }
-
 
 void displayReports(void)
 {
