@@ -7,6 +7,7 @@
 #include "suppliers.h"
 #include "assets.h"
 
+
 static void printLine(char ch, int length)
 {
     int i;
@@ -108,13 +109,13 @@ void budgetReport(void)
 
     for (i = 0; i < budgetCount; i++)
     {
-        remaining = budgets[i].allocated - budgets[i].expenditure;
-        totalAllocated += budgets[i].allocated;
+        remaining = budgets[i].allocatedBudget - budgets[i].expenditure;
+        totalAllocated += budgets[i].allocatedBudget;
         totalExpenditure += budgets[i].expenditure;
 
         printf("%-20s %14.2f %14.2f %14.2f  %s\n",
-               budgets[i].department,
-               budgets[i].allocated,
+               budgets[i].departmentName,
+               budgets[i].allocatedBudget,
                budgets[i].expenditure,
                remaining,
                (remaining >= 0) ? "WITHIN BUDGET" : "OVER BUDGET");
@@ -135,11 +136,11 @@ void budgetReport(void)
     {
         for (i = 0; i < budgetCount; i++)
         {
-            if (budgets[i].expenditure > budgets[i].allocated)
+            if (budgets[i].expenditure > budgets[i].allocatedBudget)
             {
                 printf("  - %s (over by N$%.2f)\n",
-                       budgets[i].department,
-                       budgets[i].expenditure - budgets[i].allocated);
+                       budgets[i].departmentName,
+                       budgets[i].expenditure - budgets[i].allocatedBudget);
             }
         }
     }
@@ -174,7 +175,6 @@ void supplierReport(void)
     printLine('-', 80);
     printf("Total Suppliers: %d\n", supplierCount);
 }
-
 
 void assetReport(void)
 {
