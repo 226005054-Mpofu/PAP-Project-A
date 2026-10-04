@@ -58,6 +58,34 @@ gcc -std=c99 -Wall -Wextra -o mfms main.c employees.c budget.c suppliers.c asset
 
 ./mfms (Linux/macOS) or mfms.exe (Windows). Enter a number from the main menu to choose an option.
 
+## Testing
+
+Tests are in `tests.c` and cover input validation and budget calculation.
+
+### How to run
+
+```
+gcc -std=c99 -Wall -Wextra -o mfms_tests test_main.c tests.c validation.c budget.c employees.c
+./mfms_tests
+```
+
+### Test cases
+
+| # | Function | Input | Expected | Result |
+|---|---|---|---|---|
+| 1 | validateID | 10 | Valid | PASS |
+| 2 | validateID | -5 | Invalid | PASS |
+| 3 | validateMoney | 500.00 | Valid | PASS |
+| 4 | validateMoney | -100.00 | Invalid | PASS |
+| 5 | validateText | "Finance" | Valid | PASS |
+| 6 | validateText | "" | Invalid | PASS |
+| 7 | validateEmail | student@nust.na | Valid | PASS |
+| 8 | validateEmail | studentnust.na | Invalid | PASS |
+| 9 | validatePhone | +264 81 123 4567 | Valid | PASS |
+| 10 | validatePhone | abc123 | Invalid | PASS |
+| 11 | calculateBudgetStatus | 10000 allocated, 7500 spent | Remaining 2500 | PASS |
+| 12 | calculateBudgetStatus | 10000 allocated, 7500 spent | Not exceeded | PASS |
+| 13 | calculateBudgetStatus | 5000 allocated, 6000 spent | Exceeded | PASS |
 
 
 
