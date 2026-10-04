@@ -13,7 +13,7 @@ int addSupplier(struct Supplier list [], int count)
 do
 {
    duplicate = 0;
-   printf{"Enter Supplier ID: ");
+   printf("Enter Supplier ID: ");
     scanf("%d", &id);
     while (getchar() != '\n');
 
@@ -26,7 +26,7 @@ else
 {
    for(i = 0; i < count; i++)
 {
-    if( list[i].id == id);
+    if( list[i].id == id)
 {
      printf("That ID is already used. Try again.\n");
      duplicate = 1;
@@ -40,11 +40,11 @@ list[count].id = id;
 
 printf("Enter Supplier Name: ");
     fgets(list[count].name, 50, stdin);
-    list[count].name[strcspn(list[count].name, "\n"] = '\0';
+    list[count].name[strcspn(list[count].name, "\n"] = '\0');
 
-if(strlen(list[count].name) == 0
+if(strlen(list[count].name) == 0)
 {
-    printf('Name cannot be empty.\n");
+    printf("Name cannot be empty.\n");
     return 0;
 }
  printf("Enter Email: ");
@@ -74,25 +74,27 @@ printf("Town can not be empty.\n");
 return 0;
 }
 printf("\nSupplier added successfully.\n");
+return 1;
 }
-void displaySupplier(struct Supplier list[], int count)
+void displaySuppliers(struct Supplier list[], int count)
 {
   int i;
-
+  
 if(count == 0)
 {
       printf("\nNo suppliers to display.\n");
+        return;
 }
-  printf("\n--------------------------\n);
+  printf("--------------------------------------\n");
   printf("%-5s %-20s %-25s %-15s %-15s\n", "ID", "Name", "Email", "Telephone", "Town");
-   printf("\n---------------------------\n);
+   printf("-------------------------------------\n");
 
      for(i = 0; i < count; i++)
      {
         printf("%-5d %-20s %-25s %-15s %-15s\n", list[i].id, list[i].name, list[i].email, list[i].telephone, list[i].town);
 
    }
-      printf("----------------------------\n);
+      printf("----------------------------\n");
         printf("Total suppliers: %d\n", count);
 }
 int searchSuppliers(struct suppliers list[], int count, int id)
@@ -133,19 +135,19 @@ if(i1 == -1 && i2 == -1)
    printf("\nOne or both supplier IDs were not found.\n");
    return;
 }
-printf(\n------------COMPARISON-------------\N");
+printf("\n------------COMPARISON-------------\n");
 printf("&-12s %-20s %-20s\n", "FIELD", "SUPPLIER 1", "SUPPLIER 2");
-printf("------------------------------------\n);
+printf("------------------------------------\n");
 printf("%-12s %-20d %-20d\n", "ID", list[i1].id, list[i2].id);
 printf("%-12s %-20s %-20s\n", "NAME", list[i1].name, list[i2].name);
 printf("%-12s %-20s %-20s\n", "EMAIL", list[i1].email, list[12].email);
-printf("%-12s %-20s %-20s\n", "TELEPHONE", list[1i1].telephone, list[i2].telephone);
+printf("%-12s %-20s %-20s\n", "TELEPHONE", list[i1].telephone, list[i2].telephone);
 printf("%-12s %-20s %-20s\n", "TOWN", list[i1].town, list[i2].town);
 printf("--------------------------------------\n");
 
 if(strcmp(list[i1].town, list[i2].town) == 0)
 {
-   printf("Both suppliers are in the same town.\n);
+   printf("Both suppliers are in the same town.\n");
      }
      else
      {
