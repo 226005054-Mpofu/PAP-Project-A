@@ -1,7 +1,7 @@
 #ifndef ASSETS_H
 #define ASSETS_H
 
-extern char assetID[100][20];
+extern int assetID[100];
 extern char assetName[100][50];
 extern char assetType[100][30];
 extern float purchaseValue[100];
