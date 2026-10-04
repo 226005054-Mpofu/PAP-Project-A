@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#ifndef assets_h
 #define assets_h
 
 extern int assetID[100];
