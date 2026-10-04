@@ -56,6 +56,9 @@ void employeeMenu(void)
 int main(void)
 {
     int choice;
+    
+    struct Supplier suppliers[MAX_SUPPLIERS] = {0};
+int supplierCount = 0;
 
     do
     {
