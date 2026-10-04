@@ -22,6 +22,9 @@ and reports.
     
     suppliers.c
     suppliers.h
+
+    validation.c
+    validation.h
     
 ## GROUP MEMBERS AND RESPONSIBILITES
 
@@ -49,7 +52,7 @@ and reports.
 
 Requires GCC.
 
-gcc -std=c99 -Wall -Wextra -o mfms main.c employees.c budget.c suppliers.c assets.c reports.c
+gcc -std=c99 -Wall -Wextra -o mfms main.c employees.c budget.c suppliers.c assets.c reports.c validation.c
 
 ## How to Run
 
