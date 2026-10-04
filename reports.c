@@ -145,7 +145,7 @@ void budgetReport(void)
     }
 }
 
-void supplierReport(void)
+void supplierReport(struct Supplier suppliers[], int supplierCount)
 {
     int i;
 
@@ -193,7 +193,7 @@ void assetReport(void)
 
     for (i = 0; i < assetCount; i++)
     {
-        printf("%-6d %-20s %-12s %12.2f %-16s %s\n",
+    printf("%-6d %-20s %-12s %12.2f %-16s %s\n",
                assetID[i],
                assetName[i],
                assetType[i],
@@ -224,7 +224,7 @@ void assetReport(void)
     printf("Condition summary : Good = %d, Fair = %d, Poor = %d\n", good, fair, poor);
 }
 
-void displayReports(void)
+void displayReports(struct Supplier suppliers[], int supplierCount)
 {
     int choice;
 
@@ -244,7 +244,7 @@ void displayReports(void)
         {
             case 1: employeeReport(); break;
             case 2: budgetReport();   break;
-            case 3: supplierReport(); break;
+            case 3: supplierReport(suppliers, supplierCount); break;
             case 4: assetReport();    break;
             case 5: printf("Returning to main menu...\n"); break;
             default: printf("Invalid choice. Please enter a number from 1 to 5.\n");
