@@ -21,15 +21,17 @@ and reports.
     suppliers.c
     suppliers.h
     
-# Group Members AND RESPONSIBILITIES
-224056360 -    Hilma       Josua         = Testing, documentation and git coordination    
-225171856 -    Shaida      Mutendere     = Supplier Management, read.md
-226005054 -    Misela      Mpho Mpofu    = Asset Management
-225041758 -    Laban       Shishiveni    = Functions
-226009432 -    Precious    Mukumba       = Report
-226041255 -    Haimbodi    Erwina        = Budget Management
-226063461 -    Evelyn      Muulu         = Employee Management
+## GROUP MEMBERS AND RESPONSIBILITES
 
+| Student Number | Name | Responsibility |
+|---|---|---|
+| 224056360 | Hilma Josua       | Testing, Documentation and Git Coordination  |
+| 225171856 | Shaida Mutendere  | Supplier Management and README Editing       |
+| 226005054 | Misela Mpho Mpofu | Asset Management                             |
+| 225041758 | Laban Shishiveni  | Functions                                    |
+| 226009432 | Precious Mukumba  | Reports                                      |
+| 226041255 | Haimbodi Erwina   | Budget Management                            |
+| 226063461 | Evelyn Muulu      | Employee Management                          |
 
 
 
