@@ -3,6 +3,9 @@
 #include "suppliers.h"
 #include "validation.h"
 
+struct Supplier suppliers[MAX_SUPPLIERS];
+int supplierCount = 0;
+
 int addSupplier(struct Supplier list [], int count)
 {
   int i, id, duplicate;
