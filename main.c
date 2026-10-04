@@ -97,7 +97,7 @@ int supplierCount = 0;
                 break;
 
             case 5:
-                displayReports();
+               displayReports(suppliers, supplierCount);
                 break;
 
             case 6:
