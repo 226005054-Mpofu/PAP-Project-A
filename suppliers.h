@@ -11,6 +11,8 @@ struct Supplier
     char telephone[20];
     char town[30];
 };
+extern struct Supplier suppliers[MAX_SUPPLIERS];
+extern int supplierCount;
 
 int addSupplier(struct Supplier list[], int count);
 void displaySuppliers(struct Supplier list[], int count);
