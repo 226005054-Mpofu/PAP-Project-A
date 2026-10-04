@@ -165,5 +165,4 @@ void assetMenu(void){
 
     assetMenu();
 
-    return 0;
 }
