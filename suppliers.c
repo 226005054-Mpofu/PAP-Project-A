@@ -224,11 +224,10 @@ case 5:
   printf("\nReturning to main menu...\n");
 break;
 
-deafault:
+default:
      printf("\nInvalid choice. Please try again.\n");
 }
 }
-}
-  while (choice != 5);
+} while (choice != 5);
 }
 
