@@ -193,7 +193,7 @@ void assetReport(void)
 
     for (i = 0; i < assetCount; i++)
     {
-        printf("%-6s %-20s %-12s %12.2f %-16s %s\n",
+        printf("%-6d %-20s %-12s %12.2f %-16s %s\n",
                assetID[i],
                assetName[i],
                assetType[i],
