@@ -44,7 +44,7 @@ static int readChoice(void)
 /* Gross salary = basic + housing allowance + transport allowance */
 static float calculateGross(const Employee *emp)
 {
-  return emp->basicSalary + emp->housingAllowance + emp->transportAllowance;;
+  return emp->basicSalary + emp->housingAllowance + emp->transportAllowance;
 }
 
 void employeeReport(void)
