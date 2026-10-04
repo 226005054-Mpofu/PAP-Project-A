@@ -160,9 +160,3 @@ void assetMenu(){
 
     } while (choice != 4);
 }
-
-void assetMenu(void){
-
-    assetMenu();
-
-}
