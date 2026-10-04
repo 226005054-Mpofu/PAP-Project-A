@@ -1,3 +1,4 @@
+#define SUPLLIERS_H
 #define MAX_SUPPLIERS 100
 
 struct Suplliers
