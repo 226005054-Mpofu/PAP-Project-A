@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define assets_h
-
-extern int assetID[100];
-extern char assetName[100][50];
-extern char assetType[100][30];
-extern float purchaseValue[100];
-extern char department[100][50];
-extern char assetCondition[100][30];
+#include "assets.h"
 
 int assetCount = 0;
 
