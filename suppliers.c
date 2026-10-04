@@ -227,7 +227,5 @@ break;
 default:
      printf("\nInvalid choice. Please try again.\n");
 }
-}
 } while (choice != 5);
 }
-
