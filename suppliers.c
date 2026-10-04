@@ -174,7 +174,8 @@ do
    printf("Choose an option: ");
    scanf("%d", &choice);
     while (getchar() != '\n');
-
+}
+  }
 switch (choice)
 {
 case 1:
