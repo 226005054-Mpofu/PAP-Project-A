@@ -1,16 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include "suppliers.h"
 
-#define MAX_SUPPLIERS 100
-
-struct Supplier
-{
-    int id;
-    char name[50];
-    char email[50];
-    char telephone[20];
-    char town[30];
-}
 int addSupplier(struct Supplier list [], int count)
 {
   int i, id, duplicate;
@@ -24,6 +15,7 @@ do
    duplicate = 0;
    printf{"Enter Supplier ID: ");
     scanf("%d", &id);
+    while (getchar() != '\n');
 
    if(id <= 0)
 {
@@ -47,7 +39,8 @@ else
 list[count].id = id;
 
 printf("Enter Supplier Name: ");
-scanf("%[^\n]", list[count].name);
+    fgets(list[count].name, 50, stdin);
+    list[count].name[strcspn(list[count].name, "\n"] = '\0';
 
 if(strlen(list[count].name) == 0
 {
@@ -55,31 +48,41 @@ if(strlen(list[count].name) == 0
     return 0;
 }
  printf("Enter Email: ");
-scanf("%[^\n]", list[count].email);
+fgets(list[count].email, 50,stdin);
+list[count].email[strcspn(list[count].email, "\n")] = '\0';
+
+if(strlen(list[count].email, '@') == NULL)
+{
+   printf("Email must contain '@'.\n");
+    return 0;
+}
+printf("Enter Telephone Number: ");
+fgets(list[count].telephone, 20, stdin);
+    list[count].telephone[strcspn(list[count].telephone, "\n")] = '\0';
 
 if(strlen(list[count].telephone) < 7)
 {
-   printf("Telephone number is too short.\n");
-    return 0;
-}
-printf("Enter Town/Location: ");
-scanf("%[^\n]", list[count].town);
-
-if(strlen(list[count].town) == 0)
-{
-  printf("Town can not be empty.n\n");
+  printf("Telephone number is too short.\n");
   return 0;
 }
-printf("\nSupplier added successfully.\n");
-return 1;
+printf("Enter Town/Location: ");
+    fgets(list[count].town, 30, stdin);
+    list[count].town[strcspn(list[count].town, "\n")] = '\0';
+if(strlen(list[count].town) == 0
 }
-
+printf("Town can not be empty.\n");
+return 0;
+}
+printf("\nSupplier added successfully.\n");
+}
 void displaySupplier(struct Supplier list[], int count)
 {
   int i;
 
 if(count == 0)
 {
+      printf("\nNo suppliers to display.\n");
+}
   printf("\n--------------------------\n);
   printf("%-5s %-20s %-25s %-15s %-15s\n", "ID", "Name", "Email", "Telephone", "Town");
    printf("\n---------------------------\n);
@@ -107,21 +110,25 @@ return -1;
 }
 void compareSuppliers(struct Suppliers list[], int count)
 {
+       int id1, id2, i1, i2;
+
   if(count < 2)
 {
    printf("\nYou need at least 2 suppliers to compare.\n");
     return;
 }
-printf9"Enter first Supplier ID: ");
+printf("Enter first Supplier ID: ");
   scanf("%d", &id1);
+    while (getchar() != '\n');
 
 printf("Enter second Supplier ID: ");
 scanf("%d", &id2);
+    while (getchar() != '\n');
 
-id1 = searchSupplier(list, count, id1);
-id2 = searchSupplier(list, count,id2);
+i1 = searchSupplier(list, count, id1);
+i2 = searchSupplier(list, count,id2);
 
-if(i1 == -1 && 12 == -1)
+if(i1 == -1 && i2 == -1)
 {
    printf("\nOne or both supplier IDs were not found.\n");
    return;
@@ -160,6 +167,8 @@ do
   printf("4. Compare Supplies\n");
    printf("5. Back to Main Menu\n");
    printf("Choose an option: ");
+   scanf("%d", &choice);
+    while (getchar() 1= '\n');
 
 switch (Choice)
 {
@@ -177,8 +186,9 @@ break;
 case 3:
    if(*count == 0)
 {
-   printf("Enter Supplier to search: \n");
+   printf("\nNo suppliers to search: \n");
    scanf("%d", &id);
+    while(getchar() != '\n');
 
    index = searchSupplier(list, *count, id):
 
@@ -243,178 +253,3 @@ default:
 
 return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
