@@ -11,6 +11,8 @@ and reports.
 
 # PROJECT STRUCTURE
     README.md
+    assets.c
+    assets.h
     
     budget.c
     budget.h
