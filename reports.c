@@ -44,7 +44,7 @@ static int readChoice(void)
 /* Gross salary = basic + housing allowance + transport allowance */
 static float calculateGross(const Employee *emp)
 {
-    return emp->basic_salary + emp->housing_allowance + emp->transport_allowance;
+  return emp->basicSalary + emp->housingAllowance + emp->transportAllowance;;
 }
 
 void employeeReport(void)
@@ -54,7 +54,7 @@ void employeeReport(void)
 
     printTitle("EMPLOYEE REPORT");
 
-    if (employee_count == 0)
+        if (employeeCount == 0)
     {
         printf("No employees have been registered yet.\n");
         return;
@@ -62,7 +62,7 @@ void employeeReport(void)
 
     highest = lowest = calculateGross(&employees[0]);
 
-    for (i = 0; i < employee_count; i++)
+        for (i = 0; i < employeeCount; i++)
     {
         gross = calculateGross(&employees[i]);
         total += gross;
@@ -79,9 +79,10 @@ void employeeReport(void)
         }
     }
 
-    average = total / employee_count;
+    
+    average = total / employeeCount;
 
-    printf("Total Employees : %d\n", employee_count);
+    printf("Total Employees : %d\n", employeeCount);
     printf("Total Payroll   : N$%.2f\n", total);
     printf("Average Salary  : N$%.2f\n", average);
     printf("Highest Salary  : N$%.2f (%s)\n", highest, employees[highestIndex].name);
